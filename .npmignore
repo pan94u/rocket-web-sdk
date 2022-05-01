@@ -1,0 +1,14 @@
+node_modules
+coverage
+.nyc_output
+.vscode
+package-lock.json
+yarn.lock
+src
+test
+.eslintrc.js
+.gitignore
+.prettierignore
+.prettierrc.js
+tsconfig.json
+gitlab-ci.yml

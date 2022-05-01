@@ -1,0 +1,18 @@
+image: registry.cn-hangzhou.aliyuncs.com/yx-repo/yunxicibase:0.3.0-debian
+
+stages:
+  - deploy
+
+deploy:
+  only:
+    - /^master$/
+  stage: deploy
+  script:
+    - node -v
+    - npm config set registry http://npm.haier.net/
+    - npm i @haier/packi@0.3.0-beta4
+    - mkdir .publish
+    - npx packi gen-npm-package-badge
+    - cp README.md .publish
+    - cp package.json .publish
+    - npx packi cloud-deploy
