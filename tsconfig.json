@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["esnext", "dom"],
+    "module": "commonjs",
+    "lib": ["es2020", "dom"],
     "importHelpers": true,
     "noEmitHelpers": true,
     "strict": true,
@@ -19,6 +20,6 @@
     }
   },
 
-  "include": ["src/**/*"],
+  "include": ["src/*", "src/**/*"],
   "exclude": ["node_modules"]
 }
