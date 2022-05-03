@@ -17,6 +17,6 @@ class RocketWeb implements IRocket {
 
 const w:any = window;
 w.__ROCKET_WEB__ = new RocketWeb({
-  config: Object.assign({}, w.__ROCKET_WEB_CONFIG__, config)
+  config: Object.assign({}, config, w.__ROCKET_WEB_CONFIG__)
 });
 console.log(w.__ROCKET_WEB__);
