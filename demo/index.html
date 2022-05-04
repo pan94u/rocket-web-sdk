@@ -42,7 +42,8 @@
         env: "dev", // 应用环境
         sample: 100, // 采样率
         enableSPA: false, // 开启单页面
-        enableLinkTrace: false // 开启用户链路追踪
+        enableLinkTrace: false, // 开启用户链路追踪
+        feature: ["pv", "uv", "api"], // 开启的功能
       }
       console.log(__ROCKET_WEB_CONFIG__)
       with (b) with (body) with (insertBefore(createElement('script'), firstChild)) setAttribute('crossorigin', '', (src = d))

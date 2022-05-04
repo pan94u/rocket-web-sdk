@@ -1,5 +1,7 @@
 export interface IRocket {
-    _installed: boolean;
+  _initialized: boolean;
+  _version: string;
+  defaultFeature: string[];
 }
 
 export type IRocketOptions = {
@@ -18,4 +20,10 @@ export type IRocketConfig = {
   sample: number;
   enableSPA: boolean;
   enableLinkTrace: boolean;
+  feature?: string[];
 };
+
+export interface IMonitor {
+  _mounted: boolean;
+  _version: string;
+}
