@@ -18,17 +18,39 @@ class RocketWeb implements IRocket {
     this.initialize();
   }
 
+  /**
+   * 初始化
+   */
   initialize() {
-    console.log(this._version);
-    const featureList = new Set([...this.defaultFeature, ...this.config.feature||[]]);
+    this.initData();
+    this.initFeature();
+    this._initialized = true;
+    console.log("rocket-trace initialize successful,version:", this._version);
+  }
+
+  /**
+   * 初始化必备数据
+   */
+  initData() {}
+
+  /**
+   * 初始化开启的能力
+   */
+  initFeature() {
+    const featureList = new Set([...this.defaultFeature, ...(this.config.feature || [])]);
     featureList?.forEach((feature: string) => {
       console.log("Loading features: ", feature);
     });
-    this._initialized = true;
   }
+
+  /**
+   * 初始化开启的能力
+   * @param config
+   */
+  setConfig(config: IRocketConfig) {}
 }
 
-const w:any = window;
+const w: any = window;
 w.__ROCKET_WEB__ = new RocketWeb({
   config: Object.assign({}, config, w.__ROCKET_WEB_CONFIG__)
 });
